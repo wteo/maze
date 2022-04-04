@@ -1,4 +1,4 @@
-const { Engine, Render, Runner, World, Bodies } = Matter; // All this are accessed from the Matter JS script link found in index.html
+const { Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse } = Matter; // All this are accessed from the Matter JS script link found in index.html
 
 const engine = Engine.create();
 const { world } = engine;
@@ -12,6 +12,10 @@ const render = Render.create({
 }); // this create a canvas element in html
 Render.run(render);
 Runner.run(Runner.create(), engine);
+
+World.add(world, MouseConstraint.create(engine, {
+    mouse: Mouse.create(render.canvas)
+}))
 
 /*
 const shape = Bodies.rectangle(200, 200, 50, 50, {
