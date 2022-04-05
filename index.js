@@ -27,9 +27,10 @@ const walls = [
 World.add(world, walls);
 
 // Maze generation
+// false - starts off as false to show cell in question hasn't been touched yet
 
 const grid = [];
-
+// Code below not the best example
 for (let i = 0; i < 3; i++) {
     grid.push([]);
     for (let j = 0; j < 3; j++) {
