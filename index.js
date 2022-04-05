@@ -29,13 +29,10 @@ World.add(world, walls);
 // Maze generation
 // false - starts off as false to show cell in question hasn't been touched yet
 
-const grid = [];
-// Code below not the best example
-for (let i = 0; i < 3; i++) {
-    grid.push([]);
-    for (let j = 0; j < 3; j++) {
-        grid[i].push(false);
-    }
-}
-
+const grid = Array(3)
+.fill(null)
+.map(() => Array(3).fill(false));
+// map method is used insteasd of adding [false, false, false] to fill.
+// map method preferred as this allows dev to manipulate each row of the array individually.
+// We can't do this with the latter.
 console.log(grid);
