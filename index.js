@@ -28,6 +28,19 @@ const walls = [
 World.add(world, walls);
 
 // Maze generation
+
+const shuffle = (arr) => {
+    let counter = arr.length;
+    while(counter > 0) {
+        let index = Math.floor(Math.random() * counter);
+        counter--;
+        const temp = arr[counter];
+        arr[counter] = arr[index];
+        arr[index] = temp;
+    }
+    return arr;
+}
+
 // false - starts off as false to show cell in question hasn't been touched yet
 
 const grid = Array(cells)
@@ -56,15 +69,15 @@ const stepThroughCell = (row, column) => {
     grid[row][column] = true;
 
     // Assemble randomly-ordered list of neighbors.
-    const neighbors = [
+    const neighbors = shuffle([
         [row - 1, column],
         [row, column + 1],
         [row + 1, column],
         [row, column - 1]
-    ];
+    ]); // need to randomize this. Otherwise, maze will always look the same.
     console.log(neighbors);
 
-    // JS doesn't allow us to randomize an Array within an Array.
+    // JS doesn't allow us to randomize elements within an Array. So, we need to build this ourselves.
 
     // So, we need to create own function for ourselves.
 
