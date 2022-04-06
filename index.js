@@ -101,12 +101,14 @@ const position = (row, column) => {
             horizontals[row][column] = true;
         }
 
+        position(nextRow, nextColumn);
+
     }
     // Visit that next cell.
     console.log(`Row: ${row}, Column: ${column}`)
 };
 
-position(startRow, startColumn);
+position(startRow, startColumn); // this repeats the func in a loop to continously remove the walls until a proper maze is created.
 
 console.log(grid);
 console.log(horizontals);
