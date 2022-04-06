@@ -59,7 +59,7 @@ const horizontals = Array(cells - 1)
 const startRow = Math.floor(Math.random() * cells);
 const startColumn = Math.floor(Math.random() * cells)
 
-const stepThroughCell = (row, column) => {
+const position = (row, column) => {
     // If I have visited the cell at [row, column], then return.
     if (grid[row][column]) {
         return;
@@ -70,26 +70,44 @@ const stepThroughCell = (row, column) => {
 
     // Assemble randomly-ordered list of neighbors.
     const neighbors = shuffle([
-        [row - 1, column],
-        [row, column + 1],
-        [row + 1, column],
-        [row, column - 1]
+        [row - 1, column, "up"],
+        [row, column + 1, "right"],
+        [row + 1, column, "down"],
+        [row, column - 1, "left"]
     ]); // need to randomize this. Otherwise, maze will always look the same.
-    console.log(neighbors);
-
-    // JS doesn't allow us to randomize elements within an Array. So, we need to build this ourselves.
-
-    // So, we need to create own function for ourselves.
-
+    
     // For each neightbor...
+    for (let neighbor of neighbors) {
+        const [nextRow, nextColumn, direction] = neighbor;
+        
+        // See if that neighbor is out of bounds.
+        if (nextRow < 0 || nextRow >= cells || nextColumn < 0 || nextColumn >= cells) {
+            continue; 
+        }
+        
+        // If we have visited that neighbour, continue to next neighbor.
+        if (grid[nextRow][nextColumn]) {
+            continue;
+        }
+        
+        // Remove a wall from either horizontals or verticals.
+        if (direction === "left") {
+            verticals[row][column - 1] = true;
+        } else if (direction === "right") {
+            verticals[row][column] = true;
+        } else if (direction === "up") {
+            horizontals[row - 1][column] = true;
+        } else if (direction === "down") {
+            horizontals[row][column] = true;
+        }
 
-    // See if that neighbor is out of bounds.
-
-    // If we have visited that neighbour, continue to next neighbor.
-
-    // Remove a wall from either horizontals or verticals.
-
+    }
     // Visit that next cell.
+    console.log(`Row: ${row}, Column: ${column}`)
 };
 
-stepThroughCell(1, 1);
+position(startRow, startColumn);
+
+console.log(grid);
+console.log(horizontals);
+console.log(verticals);
