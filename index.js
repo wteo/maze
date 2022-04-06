@@ -4,6 +4,8 @@ const cells = 3;
 const width = 600;
 const height = 600;
 
+const unitLength = width / cells; // the size of each cell on every side
+
 const engine = Engine.create();
 const { world } = engine;
 const render = Render.create({
@@ -102,14 +104,45 @@ const position = (row, column) => {
         }
 
         position(nextRow, nextColumn);
-
     }
     // Visit that next cell.
-    console.log(`Row: ${row}, Column: ${column}`)
 };
 
 position(startRow, startColumn); // this repeats the func in a loop to continously remove the walls until a proper maze is created.
 
-console.log(grid);
-console.log(horizontals);
-console.log(verticals);
+horizontals.forEach((row, rowIndex) => {
+    row.forEach((open, columnIndex) => {
+        if (open) {
+            return;
+        }
+
+        const wall = Bodies.rectangle(
+            columnIndex * unitLength + unitLength / 2,
+            rowIndex * unitLength + unitLength,
+            unitLength,
+            5, 
+            {
+                isStatic: true
+            }
+        );
+        World.add(world, wall);
+    });
+});
+
+verticals.forEach((row,rowIndex) => {
+    row.forEach((open, columnIndex) => {
+        if (open) {
+            return;
+        }
+        
+        const wall = Bodies.rectangle(
+            columnIndex * unitLength + unitLength,
+            rowIndex * unitLength + unitLength / 2,
+            5,
+            unitLength, {
+                isStatic: true
+            }
+        );
+        World.add(world, wall);
+    })
+})
