@@ -22,10 +22,10 @@ Runner.run(Runner.create(), engine);
 
 //Walls
 const walls = [
-    Bodies.rectangle(width/2, 0, width, 40, { isStatic: true}),
-    Bodies.rectangle(width/2, height, width, 40, { isStatic: true}),
-    Bodies.rectangle(0, height/2, 40, height, { isStatic: true}),
-    Bodies.rectangle(width, width/2, 40, height, { isStatic: true})
+    Bodies.rectangle(width/2, 0, width, 2, { isStatic: true}),
+    Bodies.rectangle(width/2, height, width, 2, { isStatic: true}),
+    Bodies.rectangle(0, height/2, 2, height, { isStatic: true}),
+    Bodies.rectangle(width, width/2, 2, height, { isStatic: true})
 ];
 World.add(world, walls);
 
@@ -147,6 +147,8 @@ verticals.forEach((row,rowIndex) => {
     });
 });
 
+// Goal
+
 const goal = Bodies.rectangle(
     width - unitLength / 2,
     height - unitLength / 2,
@@ -157,3 +159,12 @@ const goal = Bodies.rectangle(
     }
 );
 World.add(world, goal);
+
+// Ball
+
+const ball = Bodies.circle(
+    unitLength / 2,
+    unitLength / 2,
+    unitLength / 4
+);
+World.add(world, ball);
