@@ -1,7 +1,7 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter; // All this are accessed from the Matter JS script link found in index.html
 
-const cellsHorizontal = 8;
-const cellsVertical = 5;
+const cellsHorizontal = 14;
+const cellsVertical = 11;
 const width = window.innerWidth; // this ensures the maze fills up the entire window screen
 const height = window.innerHeight;
 
