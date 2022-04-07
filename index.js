@@ -1,6 +1,6 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter; // All this are accessed from the Matter JS script link found in index.html
 
-const cells = 3;
+const cells = 7;
 const width = 600;
 const height = 600;
 
@@ -121,8 +121,8 @@ horizontals.forEach((row, rowIndex) => {
             columnIndex * unitLength + unitLength / 2,
             rowIndex * unitLength + unitLength,
             unitLength,
-            5, 
-            {
+            5, {
+                label: "wall",
                 isStatic: true
             }
         );
@@ -141,6 +141,7 @@ verticals.forEach((row,rowIndex) => {
             rowIndex * unitLength + unitLength / 2,
             5,
             unitLength, {
+                label: "wall",
                 isStatic: true
             }
         );
@@ -200,7 +201,12 @@ Events.on(engine, "collisionStart", event => {
             labels.includes(collision.bodyA.label) && 
             labels.includes(collision.bodyB.label)
             ) {
-            console.log("User won!");
+            world.gravity.y = 1; // this turns gravity back on when win condition is met    
+            world.bodies.forEach(body => {
+                if (body.label === "wall") {
+                    Body.setStatic(body, false);
+                }
+            });
         }
-    })
+    });
 });
