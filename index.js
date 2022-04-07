@@ -220,6 +220,7 @@ Events.on(engine, "collisionStart", event => {
             labels.includes(collision.bodyA.label) && 
             labels.includes(collision.bodyB.label)
             ) {
+            document.querySelector(".winner").classList.remove("hidden");
             world.gravity.y = 1; // this turns gravity back on when win condition is met    
             world.bodies.forEach(body => {
                 if (body.label === "wall") {
@@ -229,3 +230,4 @@ Events.on(engine, "collisionStart", event => {
         }
     });
 });
+
