@@ -4,7 +4,7 @@ Based on section 25, the Udemy Course "The Modern Javascript Bootcamp Course (20
 
 In this game, you take control of the red ball. 
 
-<img src="https://user-images.githubusercontent.com/87306585/162549044-01f117ac-99a3-466a-9e48-52ce5854ba07.png" width="180" height="100">
+<img src="https://user-images.githubusercontent.com/87306585/162549044-01f117ac-99a3-466a-9e48-52ce5854ba07.png" width="160" height="100">
 
 
 To win, navigate through the maze and reach your end goal.
