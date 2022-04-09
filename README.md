@@ -14,7 +14,7 @@ Your end goal.
 
 Key controls:
 
-![image](https://user-images.githubusercontent.com/87306585/162548949-cf163930-2ce7-4f2a-8c69-ed985d491bba.png) =100x100)
+<img src="user-images.githubusercontent.com/87306585/162548949-cf163930-2ce7-4f2a-8c69-ed985d491bba.png" width="100" height="100">
 
 To play the game again, simply refresh the web page. Each time you do this, a brand new maze is generated.
 
