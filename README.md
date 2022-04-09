@@ -7,8 +7,11 @@ To win, take control of the red ball and nagivate through a maze and reach your 
 Use the keyboard buttons below to move the red ball.
 
 "W" --> "Up"
+
 "D" --> "Right"
+
 "S" --> "Down"
+
 "A" --> "Left"
 
 Each time you refresh the page, the app will generate a brand new maze.
