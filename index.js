@@ -127,7 +127,7 @@ horizontals.forEach((row, rowIndex) => {
             columnIndex * unitLengthX + unitLengthX / 2,
             rowIndex * unitLengthY + unitLengthY,
             unitLengthX,
-            3, {
+            5, {
                 label: "wall",
                 isStatic: true,
                 render: {
@@ -148,7 +148,7 @@ verticals.forEach((row,rowIndex) => {
         const wall = Bodies.rectangle(
             columnIndex * unitLengthX + unitLengthX,
             rowIndex * unitLengthY + unitLengthY / 2,
-            3,
+            5,
             unitLengthY, {
                 label: "wall",
                 isStatic: true, 
