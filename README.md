@@ -1,14 +1,22 @@
 # Maze
 
-Based on section 25, the Udemy Course "The Modern Javascript Bootcamp Course (2022"), I built a maze game using with the use of MatterJS library.
+Based on section 25, the Udemy Course "The Modern Javascript Bootcamp Course (2022"), I built a maze game using the help of MatterJS library.
 
-To win, take control of the red ball and nagivate through a maze and reach your end target.
+You take control of the red ball. 
 
-Use the keyboard buttons below to move the red ball.
+![image](https://user-images.githubusercontent.com/87306585/162549044-01f117ac-99a3-466a-9e48-52ce5854ba07.png)
+
+To win, navigate through the maze and reach your end goal.
+
+![image](https://user-images.githubusercontent.com/87306585/162549094-bcf61d8b-371e-44f4-a69e-7ccd7183fea2.png)
+
+Your end goal.
+
+Key controls:
 
 ![image](https://user-images.githubusercontent.com/87306585/162548949-cf163930-2ce7-4f2a-8c69-ed985d491bba.png)
 
-Each time you refresh the page, the app will generate a brand new maze.
+To play the game again, simply refresh the web page. Each time you do this, a brand new maze is generated.
 
 Link:
 
